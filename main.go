@@ -65,17 +65,13 @@ type Check struct {
 }
 
 type Comparison struct {
-	Path   *Path   `@@`
-	String *string `"=" @String`
+	Path   *Path  `@@`
+	String string `"=" @String`
 }
 
 type Path struct {
-	Name *string     `@Field`
-	Sub  []*Subfield `@@*`
-}
-
-type Subfield struct {
-	Name *string `"." @Field`
+	Base string   `@Field`
+	Sub  []string `( "." @Field)*`
 }
 
 func main() {
