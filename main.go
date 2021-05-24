@@ -46,18 +46,8 @@ type Query struct {
 
 type Requirement = Check
 
-// type Requirement struct {
-// 	Left  *Check     `@@`
-// 	Right []*OrCheck `@@*`
-// }
-
-// type OrCheck struct {
-// 	Check *Check `"OR" @@`
-// }
-
 type Check struct {
 	Cmp *Comparison `@@`
-	// Subquery *Query      `| "(" @@ ")"`
 }
 
 type Comparison struct {
@@ -67,7 +57,7 @@ type Comparison struct {
 
 type Path struct {
 	Base string   `@Field`
-	Sub  []string `( "." @Field)*`
+	Sub  []string `( "." @Field )*`
 }
 
 func main() {
