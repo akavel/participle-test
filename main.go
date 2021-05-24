@@ -60,8 +60,8 @@ type Requirement = Check
 // }
 
 type Check struct {
-	Cmp      *Comparison `@@`
-	Subquery *Query      `| "(" @@ ")"`
+	Cmp *Comparison `@@`
+	// Subquery *Query      `| "(" @@ ")"`
 }
 
 type Comparison struct {
