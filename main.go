@@ -12,8 +12,11 @@ import (
 
 // GOAL: parse below samples
 const (
+	// ex1 = `github.name = "*f\*o\\o\"o*" AND github.owner = "*bar*"`
 	ex1 = `github.name = "*foo*" AND github.owner = "*bar*"`
-	ex2 = `github.name = "*foo*"`
+	// ex1 = `github.name = "*foo*"`
+	// ex1 = `github.name.subField = "*foo*"`
+	// ex2 = `github.name = "*foo*"`
 )
 
 /*
