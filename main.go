@@ -40,12 +40,8 @@ var basicLexer = stateful.MustSimple([]stateful.Rule{
 })
 
 type Query struct {
-	Left  *Requirement      `@@`
-	Right []*AndRequirement `@@*`
-}
-
-type AndRequirement struct {
-	Req *Requirement `"AND" @@`
+	First *Requirement   `@@`
+	And   []*Requirement `( "AND" @@ )*`
 }
 
 type Requirement = Check
