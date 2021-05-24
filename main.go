@@ -48,14 +48,16 @@ type AndRequirement struct {
 	Req *Requirement `"AND" @@`
 }
 
-type Requirement struct {
-	Left  *Check     `@@`
-	Right []*OrCheck `@@*`
-}
+type Requirement = Check
 
-type OrCheck struct {
-	Check *Check `"OR" @@`
-}
+// type Requirement struct {
+// 	Left  *Check     `@@`
+// 	Right []*OrCheck `@@*`
+// }
+
+// type OrCheck struct {
+// 	Check *Check `"OR" @@`
+// }
 
 type Check struct {
 	Cmp      *Comparison `@@`
