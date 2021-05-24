@@ -44,11 +44,7 @@ type Query struct {
 	And   []*Requirement `( "AND" @@ )*`
 }
 
-type Requirement = Check
-
-type Check struct {
-	Cmp *Comparison `@@`
-}
+type Requirement = Comparison
 
 type Comparison struct {
 	Path   string `@Field @( "." Field )*`
