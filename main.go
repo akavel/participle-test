@@ -20,6 +20,16 @@ const (
 )
 
 /*
+
+CURRENT:
+	Query = Requirement {`AND` Requirement}
+	Requirement = Comparison
+	Comparison = Path `=` <String>
+	Path = <Field> {`.` <Field>}
+	<String> = `"` ... `"` // ~quoted string
+	<Field> = ... // ~identifier
+
+TODO[LATER]: (see earlier commits in this repo for experiments with more complex expressions)
 	Query = Requirement {`AND` Requirement}
 	Requirement = Check {`OR` Check}
 	Check = Path `=` Pattern | `(` Query `)`
